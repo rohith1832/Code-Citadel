@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Citadel's Grand Archive — Round 1</title>
+</head>
+<body>
+
+  <h1>The Citadel's Grand Archive — Round 1</h1>
+
+  <!-- TASK 1 -->
+  <h2>Task 1 — The Roster</h2>
+  <p>Build a complex table using &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;, rowspan, and colspan.</p>
+
+  <table border="1" cellpadding="6" cellspacing="0">
+    <caption>Guild Roster Table</caption>
+    <thead>
+      <tr>
+        <th rowspan="2">Region</th>
+        <th rowspan="2">Squad</th>
+        <th colspan="3">Members</th>
+        <th rowspan="2">Founded</th>
+      </tr>
+      <tr>
+        <th>Leader</th>
+        <th>Deputy</th>
+        <th>Operatives</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2">North</td>
+        <td>Iron Watch</td>
+        <td>Thane Ulric</td>
+        <td>Ser Lyra</td>
+        <td>Bran, Haska, Olin</td>
+        <td>2016</td>
+      </tr>
+      <tr>
+        <td>Frost Ward</td>
+        <td>Maer Vid</td>
+        <td>Frey</td>
+        <td>Joss, Mira</td>
+        <td>2018</td>
+      </tr>
+      <tr>
+        <td rowspan="2">South</td>
+        <td>Sun Blades</td>
+        <td>Captain Asha</td>
+        <td>Riv</td>
+        <td>Tala, Soren, Eld</td>
+        <td>2015</td>
+      </tr>
+      <tr>
+        <td>Amber Guard</td>
+        <td>Lord Bren</td>
+        <td>—</td>
+        <td>Kira, Nox</td>
+        <td>2019</td>
+      </tr>
+      <tr>
+        <td>Central</td>
+        <td colspan="3">Unified Council</td>
+        <td>2012</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6">Total Squads: 5 | Regions: 3 | Since 2012</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <hr>
+
+  <!-- TASK 2 -->
+  <h2>Task 2 — The Form</h2>
+  <p>Create a complex form using &lt;fieldset&gt;, &lt;legend&gt;, &lt;datalist&gt;, and &lt;select&gt;.</p>
+
+  <form action="#">
+    <fieldset>
+      <legend>Applicant Details</legend>
+
+      <label for="name">Full Name:</label><br>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="role">Desired Role:</label><br>
+      <input list="roles" id="role" name="role">
+      <datalist id="roles">
+        <option value="Leader">
+        <option value="Deputy">
+        <option value="Operative">
+        <option value="Scout">
+        <option value="Archivist">
+      </datalist><br><br>
+
+      <label for="region">Preferred Region:</label><br>
+      <select id="region" name="region">
+        <option>North</option>
+        <option>South</option>
+        <option>Central</option>
+        <option>East</option>
+      </select><br><br>
+
+      <label for="experience">Years of Experience:</label><br>
+      <input type="number" id="experience" name="experience" min="0" max="40"><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+    </fieldset>
+
+    <input type="submit" value="Submit Application">
+  </form>
+
+  <hr>
+
+  <!-- TASK 3 -->
+  <h2>Task 3 — The Proclamation</h2>
+  <p>Mark up text using &lt;article&gt;, &lt;time&gt;, &lt;blockquote&gt;, &lt;figure&gt;, and &lt;address&gt;.</p>
+
+  <article>
+    <h3>The Citadel’s Grand Announcement</h3>
+    <p><time datetime="2025-10-27">October 27, 2025</time></p>
+
+    <figure>
+      <img src="abc.jpeg" alt="Citadel emblem" width="400">
+      <figcaption>The official emblem of The Citadel.</figcaption>
+    </figure>
+
+    <blockquote>
+      "We uphold the light of knowledge and safeguard the archives of old."
+    </blockquote>
+
+    <p>Issued by The High Council of The Citadel.</p>
+
+    <address>
+      The Citadel Council<br>
+      High Keep, Citadel City<br>
+      Realm of the Archive
+    </address>
+  </article>
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Citadel — Recruitment & Roster</title>
+  <style>
+    /* --- Basic theme (medieval/Game-of-Thrones-ish) --- */
+    :root{
+      --bg:#0b0f12;
+      --panel:#0f1720;
+      --muted:#9aa6b2;
+      --accent:#b88b4a;
+      --accent-2:#6fb3b8;
+      --light:#f5f7f8;
+    }
+    html,body{height:100%;margin:0;font-family: "Georgia", "Times New Roman", serif;background:
+      linear-gradient(180deg,#081019 0%, #0b0f12 40%, #071018 100%);color:var(--light);}
+    .wrapper{max-width:1080px;margin:28px auto;padding:24px;background:radial-gradient(ellipse at top left, rgba(184,139,74,0.06), transparent 20%), rgba(255,255,255,0.01);box-shadow:0 8px 30px rgba(2,6,12,0.7);border-left:4px solid rgba(184,139,74,0.12);border-radius:8px;}
+    header{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+    .sigil{
+      width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(180deg, rgba(184,139,74,0.16), rgba(111,179,184,0.06));
+      border:2px solid rgba(184,139,74,0.08);font-weight:bold;color:var(--accent);
+      box-shadow:0 2px 10px rgba(0,0,0,0.6);
+    }
+    h1{font-family: "Palatino Linotype", "Book Antiqua", serif;font-size:28px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 0;font-size:14px}
+    main{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+    .grid{display:grid;grid-template-columns:1fr 420px;gap:18px}
+    /* form panel */
+    form.panel, .panel{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:14px;border-radius:6px;border:1px solid rgba(255,255,255,0.03)}
+    fieldset{border:1px solid rgba(255,255,255,0.03);padding:10px;margin-bottom:12px;border-radius:4px}
+    legend{padding:0 6px;color:var(--accent);font-weight:bold}
+    label{display:block;font-size:13px;margin-bottom:4px;color:var(--light)}
+    input[type="text"], input[type="email"], input[type="date"], input[type="tel"], input[type="number"], select, textarea {
+      width:100%;padding:8px;border-radius:4px;border:1px solid rgba(255,255,255,0.06);
+      background:transparent;color:var(--light);font-size:14px;
+    }
+    textarea{resize:vertical}
+    button{background:linear-gradient(180deg,var(--accent), #a9763e);color:#081019;border:none;padding:10px 14px;border-radius:6px;font-weight:bold;cursor:pointer}
+    button.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--light)}
+    /* table */
+    table{width:100%;border-collapse:collapse;background:transparent;color:var(--light);font-size:14px}
+    table caption{caption-side:top;text-align:left;padding:6px 0;font-weight:bold;color:var(--accent)}
+    th, td{border:1px solid rgba(255,255,255,0.04);padding:8px;vertical-align:top}
+    thead th{background:rgba(255,255,255,0.02);font-weight:700}
+    tfoot td{background:rgba(255,255,255,0.01);font-weight:700;color:var(--muted)}
+    .muted{color:var(--muted);font-size:13px}
+    .actions{display:flex;gap:6px;justify-content:flex-end}
+    .pill{background:rgba(255,255,255,0.03);padding:4px 8px;border-radius:999px;font-size:12px}
+    /* article */
+    article{padding:12px}
+    figure img{display:block;max-width:100%;height:auto;border-radius:6px}
+    figcaption{color:var(--muted);font-size:13px;margin-top:6px}
+    /* responsive */
+    @media (max-width:980px){
+      .grid{grid-template-columns:1fr}
+      .sigil{width:56px;height:56px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper" role="main">
+    <header>
+      <div class="sigil" aria-hidden="true">✠</div>
+      <div>
+        <h1>The Citadel — Grand Roster & Recruitment</h1>
+        <p class="lead">A themed demo site: recruitment form, interactive roster, and proclamation. (No server — data stored locally.)</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="grid">
+        <!-- LEFT: roster table -->
+        <section class="panel" aria-labelledby="rosterHeading">
+          <h2 id="rosterHeading">Task 1 — The Roster</h2>
+          <p class="muted">A complex table demonstrating <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>rowspan</code> and <code>colspan</code>.</p>
+
+          <table id="rosterTable" aria-describedby="rosterNote">
+            <caption>Guild Roster: Regions, Squads & Roles</caption>
+
+            <thead>
+              <tr>
+                <th rowspan="2">Region</th>
+                <th rowspan="2">Squad</th>
+                <th colspan="3">Members (roles)</th>
+                <th rowspan="2">Active Since</th>
+              </tr>
+              <tr>
+                <th>Leader</th>
+                <th>Deputy</th>
+                <th>Operatives</th>
+              </tr>
+            </thead>
+
+            <tbody id="rosterBody">
+              <!-- Starting static rows to show layout -->
+              <tr>
+                <td rowspan="2">North</td>
+                <td>Iron Watch</td>
+                <td>Thane Ulric</td>
+                <td>Ser Lyra</td>
+                <td>Bran<br>Haska<br>Olin</td>
+                <td>2016</td>
+              </tr>
+              <tr>
+                <td>Frost Ward</td>
+                <td>Maer Vid</td>
+                <td>Frey</td>
+                <td>Joss<br>Mira</td>
+                <td>2018</td>
+              </tr>
+
+              <tr>
+                <td rowspan="2">South</td>
+                <td>Sun Blades</td>
+                <td>Captain Asha</td>
+                <td>Riv</td>
+                <td>Tala<br>Soren<br>Eld</td>
+                <td>2015</td>
+              </tr>
+              <tr>
+                <td>Amber Guard</td>
+                <td>Lord Bren</td>
+                <td>—</td>
+                <td>Kira<br>Nox</td>
+                <td>2019</td>
+              </tr>
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <td colspan="6" id="rosterNote">Total squads: <span id="squadCount">4</span> · Saved applicants: <span id="appCount">0</span></td>
+              </tr>
+              <tr>
+                <td colspan="6">Note: This roster is illustrative and interactive: add applicants via the recruitment form (right).</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <div style="margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <button id="clearStorage" class="secondary" type="button">Clear Saved Applicants</button>
+            <span class="muted">Data persists in your browser's <code>localStorage</code>.</span>
+          </div>
+        </section>
+
+        <!-- RIGHT: form + proclamation -->
+        <aside>
+          <form id="recruitForm" class="panel" aria-labelledby="recruitmentFormHeading" autocomplete="on">
+            <h3 id="recruitmentFormHeading">Task 2 — Recruitment / Assignment</h3>
+
+            <fieldset>
+              <legend>Applicant Details</legend>
+
+              <label for="fullname">Full name</label>
+              <input id="fullname" name="fullname" type="text" required autocomplete="name" />
+
+              <label for="birthdate">Date of birth</label>
+              <input id="birthdate" name="birthdate" type="date" required />
+
+              <label for="desired-role">Desired role (type to search)</label>
+              <input id="desired-role" name="role" list="roles" placeholder="e.g. Operative" required />
+              <datalist id="roles">
+                <option value="Leader"></option>
+                <option value="Deputy"></option>
+                <option value="Operative"></option>
+                <option value="Scout"></option>
+                <option value="Archivist"></option>
+                <option value="Artificer"></option>
+              </datalist>
+
+              <label for="experience">Years of experience</label>
+              <input id="experience" name="experience" type="number" min="0" max="50" value="0" required />
+            </fieldset>
+
+            <fieldset>
+              <legend>Assignment Preferences</legend>
+
+              <label for="region">Preferred region</label>
+              <select id="region" name="region" required>
+                <option value="">-- choose region --</option>
+                <option value="North">North</option>
+                <option value="South">South</option>
+                <option value="Central">Central</option>
+                <option value="East">East</option>
+              </select>
+
+              <label for="squad">Preferred squad (optional)</label>
+              <input id="squad" name="squad" type="text" placeholder="e.g. Iron Watch" />
+
+              <label for="availability">Availability (weeks)</label>
+              <select id="availability" name="availability" required>
+                <option value="1">1 week</option>
+                <option value="2">2 weeks</option>
+                <option value="4">4 weeks</option>
+                <option value="12">12+ weeks</option>
+              </select>
+
+              <label for="notes">Notes for commanders</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Special skills, constraints, or requests"></textarea>
+            </fieldset>
+
+            <fieldset>
+              <legend>Contact</legend>
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" pattern="[0-9()+\- ]{7,}" placeholder="+91 98765 43210" />
+            </fieldset>
+
+            <div style="display:flex;gap:8px;align-items:center">
+              <button type="submit">Submit Request</button>
+              <button type="reset" class="secondary">Reset</button>
+            </div>
+          </form>
+
+          <section class="panel" aria-labelledby="proclHeading" style="margin-top:16px">
+            <h3 id="proclHeading">Task 3 — The Proclamation</h3>
+            <article aria-labelledby="proclTitle">
+              <h4 id="proclTitle" style="margin:0;color:var(--accent)">Proclamation of the Citadel Council</h4>
+              <p class="muted"><time datetime=""> <script>document.write(new Date().toLocaleDateString())</script></time></p>
+
+              <figure>
+                <!-- no external images used. If you have a local image, replace src with your local path -->
+                <svg width="100%" height="140" viewBox="0 0 600 140" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#b88b4a" stop-opacity="0.12"/><stop offset="1" stop-color="#6fb3b8" stop-opacity="0.06"/></linearGradient>
+                  </defs>
+                  <rect x="0" y="0" width="100%" height="100%" fill="url(#g)"></rect>
+                  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia" font-size="26" fill="#d9c8a3">Seal of the Citadel</text>
+                </svg>
+                <figcaption>Seal of the Citadel — symbolic emblem.</figcaption>
+              </figure>
+
+              <p>
+                Hearken all who dwell within the citadel walls. The Council convenes and hereby declares
+                the formation of new squads to patrol the western approaches. Assignments shall be decided
+                by merit and need.
+              </p>
+
+              <blockquote cite="">
+                <p>"We bind ourselves to the safety of the citadel and the preservation of knowledge.
+                Let each member be judged by their deeds and the steadiness of their hand."</p>
+              </blockquote>
+
+              <address>
+                The Citadel Council<br>
+                High Keep, Citadel Road<br>
+                Citadel City
+              </address>
+            </article>
+          </section>
+        </aside>
+      </div>
+
+      <!-- small help note -->
+      <div style="margin-top:8px" class="muted">Tip: submit the form to add a new applicant to the roster table. You can delete applicants from the roster.</div>
+    </main>
+  </div>
+
+  <script>
+    /* --- Simple client-side logic: store applicants in localStorage and update roster table --- */
+    (function(){
+      const LS_KEY = 'citadel_applicants_v1';
+      const form = document.getElementById('recruitForm');
+      const rosterBody = document.getElementById('rosterBody');
+      const appCountEl = document.getElementById('appCount');
+      const squadCountEl = document.getElementById('squadCount');
+      const clearBtn = document.getElementById('clearStorage');
+
+      function loadApplicants(){
+        const raw = localStorage.getItem(LS_KEY);
+        try{
+          return raw ? JSON.parse(raw) : [];
+        }catch(e){ return []; }
+      }
+
+      function saveApplicants(arr){
+        localStorage.setItem(LS_KEY, JSON.stringify(arr));
+      }
+
+      function renderApplicants(){
+        const apps = loadApplicants();
+        // Insert applicants as rows at the end of tbody
+        // We will create a group "Saved Applicants" with a header row if any exist
+        // But to keep the original layout intact, we'll append rows directly.
+        // First remove existing appended rows (we mark them with data-app-row)
+        Array.from(rosterBody.querySelectorAll('tr[data-app-row]')).forEach(r=>r.remove());
+
+        apps.forEach((a, idx)=>{
+          const tr = document.createElement('tr');
+          tr.setAttribute('data-app-row','1');
+          // We'll use colspan to show applicant info compactly
+          // Columns order: Region | Squad | Leader | Deputy | Operatives | Active Since
+          // If user provided a squad, split into columns; else colspan across a few cells
+          const tdRegion = document.createElement('td');
+          tdRegion.textContent = a.region || '—';
+          const tdSquad = document.createElement('td');
+          tdSquad.textContent = a.squad || (a.role ? a.role : 'Applicant');
+          const tdLeader = document.createElement('td');
+          tdLeader.textContent = a.fullname;
+          const tdDeputy = document.createElement('td');
+          tdDeputy.textContent = a.role || '—';
+          const tdOps = document.createElement('td');
+          tdOps.innerHTML = (a.notes ? escapeHtml(a.notes) + '<br>' : '') + 'Avail: ' + escapeHtml(a.availability);
+          const tdSince = document.createElement('td');
+          tdSince.textContent = new Date().getFullYear();
+
+          tr.appendChild(tdRegion);
+          tr.appendChild(tdSquad);
+          tr.appendChild(tdLeader);
+          tr.appendChild(tdDeputy);
+          tr.appendChild(tdOps);
+
+          // action cell appended inside tdSince as small delete button
+          const btn = document.createElement('button');
+          btn.textContent = 'Delete';
+          btn.className = 'secondary';
+          btn.type = 'button';
+          btn.style.fontSize = '12px';
+          btn.style.padding = '6px';
+          btn.addEventListener('click', ()=>{ deleteApplicant(idx); });
+
+          tdSince.appendChild(document.createTextNode(' '));
+          tdSince.appendChild(btn);
+
+          tr.appendChild(tdSince);
+
+          rosterBody.appendChild(tr);
+        });
+
+        appCountEl.textContent = apps.length;
+      }
+
+      function addApplicant(payload){
+        const apps = loadApplicants();
+        apps.push(payload);
+        saveApplicants(apps);
+        renderApplicants();
+      }
+
+      function deleteApplicant(index){
+        const apps = loadApplicants();
+        apps.splice(index,1);
+        saveApplicants(apps);
+        renderApplicants();
+      }
+
+      function clearAllApplicants(){
+        localStorage.removeItem(LS_KEY);
+        renderApplicants();
+      }
+
+      function escapeHtml(s){
+        if(!s) return '';
+        return s.replace(/[&<>"']/g, function(m){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]; });
+      }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        // basic extraction and validation (HTML already enforces required)
+        const payload = {
+          fullname: form.fullname.value.trim(),
+          birthdate: form.birthdate.value,
+          role: form['role'].value || '',
+          experience: form.experience.value || '0',
+          region: form.region.value || '',
+          squad: form.squad.value || '',
+          availability: form.availability.value || '',
+          notes: form.notes.value || '',
+          email: form.email.value || '',
+          phone: form.phone.value || ''
+        };
+        // minimal check
+        if(!payload.fullname || !payload.birthdate || !payload.region) {
+          alert('Please fill required fields (Full name, birthdate, preferred region).');
+          return;
+        }
+        addApplicant(payload);
+        form.reset();
+        form.fullname.focus();
+      });
+
+      clearBtn.addEventListener('click', function(){
+        if(confirm('Clear all saved applicants from localStorage?')) clearAllApplicants();
+      });
+
+      // initial render
+      (function init(){
+        renderApplicants();
+        // compute squadCount from static rows + appended rows
+        // static squads are the original 4 in markup; we will show total squads = static + saved
+        function updateSquadCount(){
+          const staticSquads = 4;
+          const apps = loadApplicants();
+          squadCountEl.textContent = staticSquads + apps.length;
+        }
+        // watch localStorage by rendering every time we change apps (renderApplicants calls after changes)
+        const origRender = renderApplicants;
+        renderApplicants = function(){
+          origRender();
+          updateSquadCount();
+        };
+        // run once to update counts
+        updateSquadCount();
+      })();
+
+      // improve accessibility: pressing Enter inside inputs will submit; already default
+    })();
+  </script>
+</body>
+</html>

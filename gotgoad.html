@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Great Houses of Westeros</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Trajan Pro", serif;
+    background-image: url('https://wallpapercave.com/wp/wp4030572.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #f5f5f5;
+    text-align: center;
+  }
+
+  header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    font-size: 2em;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #aa0000;
+  }
+
+  .houses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .house {
+    background-color: rgba(20, 20, 20, 0.8);
+    border: 2px solid #555;
+    border-radius: 10px;
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+
+  .house:hover {
+    transform: scale(1.05);
+    border-color: #aa0000;
+  }
+
+  .house img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .house h3 {
+    margin: 10px 0;
+  }
+
+  #infoBox {
+    margin: 30px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #aa0000;
+    border-radius: 10px;
+    display: none;
+  }
+
+  footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    font-size: 0.9em;
+    border-top: 1px solid #444;
+  }
+</style>
+</head>
+<body>
+  <header>⚔️ The Great Houses of Westeros ⚔️</header>
+
+  <div class="houses">
+    <div class="house" onclick="showInfo('stark')">
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/39/House_Stark.svg" alt="House Stark">
+      <h3>House Stark</h3>
+    </div>
+    <div class="house" onclick="showInfo('lannister')">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/House_Lannister.svg" alt="House Lannister">
+      <h3>House Lannister</h3>
+    </div>
+    <div class="house" onclick="showInfo('targaryen')">
+      <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/House_Targaryen.svg" alt="House Targaryen">
+      <h3>House Targaryen</h3>
+    </div>
+    <div class="house" onclick="showInfo('baratheon')">
+      <img src="https://upload.wikimedia.org/wikipedia/en/9/9d/House_Baratheon.svg" alt="House Baratheon">
+      <h3>House Baratheon</h3>
+    </div>
+  </div>
+
+  <div id="infoBox"></div>
+
+  <footer>© 2025 Westeros Archive — “When you play the Game of Thrones, you win or you die.”</footer>
+
+  <script>
+    const houseData = {
+      stark: {
+        name: "House Stark of Winterfell",
+        words: "Winter is Coming",
+        seat: "Winterfell, The North",
+        history: "The Starks ruled the North for thousands of years. Known for honor and loyalty, they stood as the shield that guards the realms of men."
+      },
+      lannister: {
+        name: "House Lannister of Casterly Rock",
+        words: "Hear Me Roar! (Unofficial: A Lannister Always Pays His Debts)",
+        seat: "Casterly Rock, The Westerlands",
+        history: "One of the richest houses in Westeros, known for wealth, power, and cunning. Their golden lion roars across the realm."
+      },
+      targaryen: {
+        name: "House Targaryen of Dragonstone",
+        words: "Fire and Blood",
+        seat: "Dragonstone",
+        history: "Descended from Old Valyria, they ruled Westeros for nearly 300 years with the might of dragons until the fall of King Aerys II."
+      },
+      baratheon: {
+        name: "House Baratheon of Storm’s End",
+        words: "Ours is the Fury",
+        seat: "Storm’s End, The Stormlands",
+        history: "Founded by Orys Baratheon, the house rose to the Iron Throne through Robert’s Rebellion, but later fell into ruin and division."
+      }
+    };
+
+    function showInfo(house) {
+      const info = houseData[house];
+      const infoBox = document.getElementById("infoBox");
+      infoBox.innerHTML = `
+        <h2>${info.name}</h2>
+        <p><b>Words:</b> ${info.words}</p>
+        <p><b>Seat:</b> ${info.seat}</p>
+        <p>${info.history}</p>
+      `;
+      infoBox.style.display = "block";
+      window.scrollTo({ top: infoBox.offsetTop, behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>

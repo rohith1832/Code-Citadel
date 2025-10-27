@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round 1 — The Citadel's Grand Archive (HTML-only)</title>
+</head>
+<body>
+    <!-- TASK 2: Complex form using fieldset, legend, datalist, select; accessibility: every input has a label -->
+<h2>Task 2 — The Form: Recruitment &amp; Assignment</h2>
+
+<form action="#" method="post" aria-labelledby="recruitmentFormHeading">
+  <h3 id="recruitmentFormHeading">Recruitment / Assignment Request</h3>
+
+  <fieldset>
+    <legend>Applicant Details</legend>
+
+    <label for="fullname">Full name:</label><br>
+    <input id="fullname" name="fullname" type="text" required autocomplete="name"><br><br>
+
+    <label for="birthdate">Date of birth:</label><br>
+    <input id="birthdate" name="birthdate" type="date" required><br><br>
+
+    <label for="desired-role">Desired role (type to search):</label><br>
+    <input id="desired-role" name="role" list="roles" placeholder="e.g. Operative" required>
+    <datalist id="roles">
+      <option value="Leader">
+      <option value="Deputy">
+      <option value="Operative">
+      <option value="Scout">
+      <option value="Archivist">
+      <option value="Artificer">
+    </datalist>
+    <br><br>
+
+    <label for="experience">Years of experience:</label><br>
+    <input id="experience" name="experience" type="number" min="0" max="50" required><br><br>
+  </fieldset>
+
+  <fieldset>
+    <legend>Assignment Preferences</legend>
+
+    <label for="region">Preferred region:</label><br>
+    <select id="region" name="region" required>
+      <option value="">-- choose region --</option>
+      <option value="north">North</option>
+      <option value="south">South</option>
+      <option value="central">Central</option>
+      <option value="east">East</option>
+    </select>
+    <br><br>
+
+    <label for="squad">Preferred squad (optional):</label><br>
+    <input id="squad" name="squad" type="text" placeholder="e.g. Iron Watch"><br><br>
+
+    <label for="availability">Availability (weeks):</label><br>
+    <select id="availability" name="availability" required>
+      <option value="1">1 week</option>
+      <option value="2">2 weeks</option>
+      <option value="4">4 weeks</option>
+      <option value="12">12+ weeks</option>
+    </select>
+    <br><br>
+
+    <label for="notes">Notes for commanders:</label><br>
+    <textarea id="notes" name="notes" rows="4" cols="40" placeholder="Any special skills, constraints, or requests"></textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend>Contact</legend>
+
+    <label for="email">Email:</label><br>
+    <input id="email" name="email" type="email" required><br><br>
+
+    <label for="phone">Phone:</label><br>
+    <input id="phone" name="phone" type="tel" pattern="[0-9()+\- ]{7,}" placeholder="+91 98765 43210"><br><br>
+  </fieldset>
+
+  <button type="submit">Submit Request</button>
+</form>
+</body>
+</html>

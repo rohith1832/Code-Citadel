@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Round 1 — The Citadel's Grand Archive (HTML-only)</title>
+</head>
+<body>
+
+  <h1>The Citadel's Grand Archive — Round 1</h1>
+
+  <!-- TASK 1: Complex table using thead, tbody, tfoot, rowspan, colspan -->
+  <h2>Task 1 — The Roster: Complex &lt;table&gt;</h2>
+
+  <table border="1" cellpadding="6" cellspacing="0">
+    <caption>Guild Roster: Regions, Squads &amp; Ranks</caption>
+
+    <thead>
+      <tr>
+        <th rowspan="2">Region</th>
+        <th rowspan="2">Squad</th>
+        <th colspan="3">Members (roles)</th>
+        <th rowspan="2">Active Since</th>
+      </tr>
+      <tr>
+        <th>Leader</th>
+        <th>Deputy</th>
+        <th>Operatives</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- North region has 2 squads, use rowspan for Region -->
+      <tr>
+        <td rowspan="2">North</td>
+        <td>Iron Watch</td>
+        <td>Thane Ulric</td>
+        <td>Ser Lyra</td>
+        <td>
+          - Bran<br>
+          - Haska<br>
+          - Olin
+        </td>
+        <td>2016</td>
+      </tr>
+      <tr>
+        <!-- Region cell continues -->
+        <td>Frost Ward</td>
+        <td>Maer Vid</td>
+        <td>Frey</td>
+        <td>- Joss<br>- Mira</td>
+        <td>2018</td>
+      </tr>
+
+      <!-- South region with 3 squads -->
+      <tr>
+        <td rowspan="3">South</td>
+        <td>Sun Blades</td>
+        <td>Captain Asha</td>
+        <td>Riv</td>
+        <td>- Tala<br>- Soren<br>- Eld</td>
+        <td>2015</td>
+      </tr>
+      <tr>
+        <td>Amber Guard</td>
+        <td>Lord Bren</td>
+        <td>-</td>
+        <td>- Kira<br>- Nox</td>
+        <td>2019</td>
+      </tr>
+      <tr>
+        <td>River Sentinels</td>
+        <td>Marin</td>
+        <td>Hale</td>
+        <td>- Zed</td>
+        <td>2020</td>
+      </tr>
+
+      <!-- Central region single-row, demonstrate colspan inside body -->
+      <tr>
+        <td>Central</td>
+        <td colspan="3">Unified Council (Councilors rotate duties)</td>
+        <td>2012</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="2"><strong>Totals</strong></td>
+        <td colspan="3">Regions: 4 · Squads: 7 · Named Leaders: 10+</td>
+        <td><strong>Since 2012</strong></td>
+      </tr>
+      <tr>
+        <td colspan="6">Note: This roster is illustrative HTML-only data demonstrating the use of thead, tbody, tfoot, rowspan and colspan.</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  
+  
+</body>
+</html>
