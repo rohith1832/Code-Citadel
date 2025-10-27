@@ -34,5 +34,5 @@ Join your favorite **House**, chat in **Battle Channels**, and experience the re
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/thronescord.git
+git clone https://github.com/rohith1832/code-citadel.git
 cd thronescord
