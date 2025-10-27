@@ -35,4 +35,10 @@ Join your favorite **House**, chat in **Battle Channels**, and experience the re
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/rohith1832/code-citadel.git
-cd thronescord
+cd code-citadel
+
+![Uploading Screenshot 2025-10-27 at 9.11.40 PM.png…]()
+![Uploading Screenshot 2025-10-27 at ![Uploading Screenshot 2025-10-27 at 9.11.18 PM.png…]()
+9.11.24 PM.png…]()
+![Uploading Screenshot 2025-10-27 at 9.11.05 PM.png…]()
+
